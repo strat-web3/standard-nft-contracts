@@ -9,7 +9,7 @@ task("mint", "Mint a given amount of ERC-20 tokens")
     .addParam("amount")
     .setAction(async (amount, hre) => {
         const [signer] = await ethers.getSigners()
-        const Basic = await ethers.getContractFactory("Basic")
+        const NFT = await ethers.getContractFactory("NFT")
         let addr
         switch (hre.network.name) {
             case "arthera":
@@ -25,8 +25,8 @@ task("mint", "Mint a given amount of ERC-20 tokens")
                 addr = opSepoliaDeploymentData.address
                 break
         }
-        const erc20 = new ethers.Contract(addr, Basic.interface, signer)
-        const mint = await erc20.mint(await ethers.parseEther(amount.amount))
+        const nft = new ethers.Contract(addr, NFT.interface, signer)
+        const mint = await nft.safeMint(await ethers.parseEther(amount.amount))
         const hash = mint.hash
         console.log(
             "Minted",

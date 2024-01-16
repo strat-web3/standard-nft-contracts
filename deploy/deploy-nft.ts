@@ -3,17 +3,15 @@ const color = require("cli-color")
 var msg = color.xterm(39).bgXterm(128)
 import hre, { ethers, network } from "hardhat"
 
-const initialMint = ethers.parseEther("10000")
-
 export default async ({ getNamedAccounts, deployments }: any) => {
     const { deploy } = deployments
 
     const { deployer } = await getNamedAccounts()
     console.log(deployer)
 
-    const basic = await deploy("Basic", {
+    const basic = await deploy("NFT", {
         from: deployer,
-        args: [initialMint],
+        args: [deployer],
         log: true
     })
 
@@ -91,7 +89,7 @@ export default async ({ getNamedAccounts, deployments }: any) => {
                 await hre.run("verify:verify", {
                     network: network.name,
                     address: basic.receipt.contractAddress,
-                    constructorArguments: [initialMint]
+                    constructorArguments: [deployer]
                 })
                 console.log("Etherscan verification done. ✅")
             } catch (error) {
@@ -113,7 +111,7 @@ export default async ({ getNamedAccounts, deployments }: any) => {
                 await hre.run("verify:verify", {
                     network: network.name,
                     address: basic.receipt.contractAddress,
-                    constructorArguments: [initialMint]
+                    constructorArguments: [deployer]
                 })
                 console.log("Etherscan verification done. ✅")
             } catch (error) {
