@@ -1,0 +1,70 @@
+{
+    "name": "Olivier DEGORCE (1964) After à Gif sur Yvette, La sourie, 1992",
+    "author": "Olivier DEGORCE",
+    "authorAddress": "0x4208C5521001075ED4e87973406addB67E038a3f",
+    "description": "Olivier DEGORCE (1964) After à Gif sur Yvette, La sourie, 1992 Raveuse debout sur une cheminée, avec à l’arrière plan, décoration d’un raver surnommé « Coconut ». Maison sur Pilotis, Gif-sur-Yvette - Tirage photographique couleur. Tirage jet d'encre Signé par l’artiste et numéroté n° 5/21 au dos.  40 X 60 cm Tirage accompagné de son NFT 1/21 avec même numérotation que l’œuvre physique.\n\nSHA384(rave-34.jpg)= 67d461da483702881f0d626770b15e517dee6a820c49a661cc3232dd8586fe4314b08c7f37fac25ff0627efe85f20089 \n\nAvant toute transaction, vérifier l’état du certificat NFT sur : https://boischaut.fr/nft_check?67d461da483702881f0d626770b15e517dee6a820c49a661cc3232dd8586fe4314b08c7f37fac25ff0627efe85f20089\n\nCGU NFT et licence d'utilisation de l'œuvre numérique : https://ipfs.io/ipfs/bafybeibungluzo35nyjbgbfw7ejezavgkw76hajeoeotwjpseto5p44qom/cgu-nft-vente-rave-04022023.pdf\n\nFichier du NFT : https://ipfs.io/ipfs/bafybeic27cjzy73isfb2quuo3rnzhwdbm2u4deqcqmkl7eezmukuof4obq/rave-34.jpg",
+    "image": "https://ipfs.io/ipfs/bafybeic27cjzy73isfb2quuo3rnzhwdbm2u4deqcqmkl7eezmukuof4obq/rave-34.jpg",
+    "imageSHA384": "67d461da483702881f0d626770b15e517dee6a820c49a661cc3232dd8586fe4314b08c7f37fac25ff0627efe85f20089",
+    "license": "https://ipfs.io/ipfs/bafybeibungluzo35nyjbgbfw7ejezavgkw76hajeoeotwjpseto5p44qom/cgu-nft-vente-rave-04022023.pdf",
+    "registrar": "Boischaut SVV",
+    "attributes": [
+        {
+            "trait_type": "Resale rights (%)",
+            "value": 4
+        },
+        {
+            "trait_type": "View IP licence",
+            "value": "https://ipfs.io/ipfs/bafybeibungluzo35nyjbgbfw7ejezavgkw76hajeoeotwjpseto5p44qom/cgu-nft-vente-rave-04022023.pdf"
+        },
+        {
+            "trait_type": "Author",
+            "value": "Olivier DEGORCE"
+        },
+        {
+            "trait_type": "Author address",
+            "value": "0x4208C5521001075ED4e87973406addB67E038a3f"
+        },
+        {
+            "trait_type": "File",
+            "value": "https://ipfs.io/ipfs/bafybeic27cjzy73isfb2quuo3rnzhwdbm2u4deqcqmkl7eezmukuof4obq/rave-34.jpg"
+        },
+        {
+            "trait_type": "FileSHA384",
+            "value": "67d461da483702881f0d626770b15e517dee6a820c49a661cc3232dd8586fe4314b08c7f37fac25ff0627efe85f20089"
+        },
+        {
+            "trait_type": "Registrar",
+            "value": "Boischaut SVV"
+        }
+    ],
+    "license_details": [
+        {
+            "trait_type": "exclusivity",
+            "value": "false"
+        },
+        {
+            "trait_type": "privateUse",
+            "value": "true"
+        },
+        {
+            "trait_type": "displayOnMarketplaces",
+            "value": "true"
+        },
+        {
+            "trait_type": "displayOnEveryMedia",
+            "value": "false"
+        },
+        {
+            "trait_type": "rightToAdapt",
+            "value": "false"
+        },
+        {
+            "trait_type": "rightToAddALogo",
+            "value": "false"
+        },
+        {
+            "trait_type": "merchandisingRights",
+            "value": "false"
+        }
+    ]
+}

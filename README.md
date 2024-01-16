@@ -1,6 +1,12 @@
-# W3HC Hardhat Template
+# Standard NFT contracts
 
-This Hardhat template includes:
+Standard NFT Solidity contracts for X institutional partner.
+
+## Metadata template
+
+https://bafkreiey5j7hi4vfclpi7pelu7o766nlhwpronbpuu446erlgb3ev6ka4q.ipfs.w3s.link/
+
+## Features
 
 -   [Typescript](https://www.typescriptlang.org/)
 -   [Ethers v6](https://docs.ethers.org/v6/)
@@ -55,17 +61,9 @@ pnpm bal <NETWORK_NAME>
 pnpm sourcify:<NETWORK_NAME>
 ```
 
-## Mint
+## Deployments
 
-```
-pnpm mint:<NETWORK_NAME> 42
-```
-
-## Send
-
-```
-pnpm send:<NETWORK_NAME> 8
-```
+- First deployment to Sepolia: https://sepolia.etherscan.io/address/0x3210E66d0dB822bB100B928C6445B78F918B246b#code 
 
 ## Versions
 
