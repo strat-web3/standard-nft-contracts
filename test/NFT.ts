@@ -6,7 +6,7 @@ describe("Standard NFT", function () {
     async function deployContracts() {
         const [alice, bob, francis] = await ethers.getSigners()
         const uri =
-            "https://bafkreiey5j7hi4vfclpi7pelu7o766nlhwpronbpuu446erlgb3ev6ka4q.ipfs.w3s.link/"
+            "https://bafkreidrrwa6eckvudnokxsttfayckjvilqpote6xn3fc5beler76py57u.ipfs.w3s.link/"
         const NFT = await ethers.getContractFactory("NFT")
         const nft = await NFT.deploy(alice.address)
         return { nft, alice, bob, francis, uri }

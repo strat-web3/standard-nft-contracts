@@ -1,36 +1,36 @@
 {
-    "name": "Olivier DEGORCE (1964) After à Gif sur Yvette, La sourie, 1992",
-    "author": "Olivier DEGORCE",
-    "authorAddress": "0x4208C5521001075ED4e87973406addB67E038a3f",
-    "description": "Olivier DEGORCE (1964) After à Gif sur Yvette, La sourie, 1992 Raveuse debout sur une cheminée, avec à l’arrière plan, décoration d’un raver surnommé « Coconut ». Maison sur Pilotis, Gif-sur-Yvette - Tirage photographique couleur. Tirage jet d'encre Signé par l’artiste et numéroté n° 5/21 au dos.  40 X 60 cm Tirage accompagné de son NFT 1/21 avec même numérotation que l’œuvre physique.\n\nSHA384(rave-34.jpg)= 67d461da483702881f0d626770b15e517dee6a820c49a661cc3232dd8586fe4314b08c7f37fac25ff0627efe85f20089 \n\nAvant toute transaction, vérifier l’état du certificat NFT sur : https://boischaut.fr/nft_check?67d461da483702881f0d626770b15e517dee6a820c49a661cc3232dd8586fe4314b08c7f37fac25ff0627efe85f20089\n\nCGU NFT et licence d'utilisation de l'œuvre numérique : https://ipfs.io/ipfs/bafybeibungluzo35nyjbgbfw7ejezavgkw76hajeoeotwjpseto5p44qom/cgu-nft-vente-rave-04022023.pdf\n\nFichier du NFT : https://ipfs.io/ipfs/bafybeic27cjzy73isfb2quuo3rnzhwdbm2u4deqcqmkl7eezmukuof4obq/rave-34.jpg",
-    "image": "https://ipfs.io/ipfs/bafybeic27cjzy73isfb2quuo3rnzhwdbm2u4deqcqmkl7eezmukuof4obq/rave-34.jpg",
-    "imageSHA384": "67d461da483702881f0d626770b15e517dee6a820c49a661cc3232dd8586fe4314b08c7f37fac25ff0627efe85f20089",
-    "license": "https://ipfs.io/ipfs/bafybeibungluzo35nyjbgbfw7ejezavgkw76hajeoeotwjpseto5p44qom/cgu-nft-vente-rave-04022023.pdf",
+    "name": "Insufficient funds",
+    "author": "Julien Béranger",
+    "authorAddress": "0x27292E1a901E3E0bE7d144aDba4CAD07da2d8a42",
+    "description": "This is a screenshot of an error I got as I was testing the NFT Registry API. It's my favorite error because it proves the app I'm building is working as intended. An empty wallet is a non-issue: send it a handful of ETH and everything will be just fine. \n\nMoney has no value. \n\nhttps://ultrasound.money/",
+    "image": "ipfs://bafybeiakz6ddls5hrcgrcpse3ofuqxx3octuedtapyxnstktyoadtwjjqi",
+    "imageSHA384": "88888",
+    "license": "88888",
     "registrar": "Boischaut SVV",
     "attributes": [
         {
             "trait_type": "Resale rights (%)",
-            "value": 4
+            "value": 10
         },
         {
             "trait_type": "View IP licence",
-            "value": "https://ipfs.io/ipfs/bafybeibungluzo35nyjbgbfw7ejezavgkw76hajeoeotwjpseto5p44qom/cgu-nft-vente-rave-04022023.pdf"
+            "value": "88888"
         },
         {
             "trait_type": "Author",
-            "value": "Olivier DEGORCE"
+            "value": "Julien Béranger"
         },
         {
             "trait_type": "Author address",
-            "value": "0x4208C5521001075ED4e87973406addB67E038a3f"
+            "value": "0x27292E1a901E3E0bE7d144aDba4CAD07da2d8a42"
         },
         {
             "trait_type": "File",
-            "value": "https://ipfs.io/ipfs/bafybeic27cjzy73isfb2quuo3rnzhwdbm2u4deqcqmkl7eezmukuof4obq/rave-34.jpg"
+            "value": "https://bafybeiakz6ddls5hrcgrcpse3ofuqxx3octuedtapyxnstktyoadtwjjqi.ipfs.w3s.link/"
         },
         {
             "trait_type": "FileSHA384",
-            "value": "67d461da483702881f0d626770b15e517dee6a820c49a661cc3232dd8586fe4314b08c7f37fac25ff0627efe85f20089"
+            "value": "88888"
         },
         {
             "trait_type": "Registrar",
@@ -40,7 +40,7 @@
     "license_details": [
         {
             "trait_type": "exclusivity",
-            "value": "false"
+            "value": "true"
         },
         {
             "trait_type": "privateUse",

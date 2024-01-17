@@ -4,7 +4,7 @@ Standard NFT Solidity contracts for X institutional partner.
 
 ## Metadata template
 
-https://bafkreiey5j7hi4vfclpi7pelu7o766nlhwpronbpuu446erlgb3ev6ka4q.ipfs.w3s.link/
+https://bafkreidrrwa6eckvudnokxsttfayckjvilqpote6xn3fc5beler76py57u.ipfs.w3s.link/
 
 ## Features
 
@@ -47,6 +47,12 @@ pnpm test
 pnpm deploy:<NETWORK_NAME>
 ```
 
+## Mint
+
+```
+pnpm mint:<NETWORK_NAME>
+```
+
 ## Check balance
 
 You can check the current signer wallet balance:
@@ -63,7 +69,8 @@ pnpm sourcify:<NETWORK_NAME>
 
 ## Deployments
 
-- First deployment to Sepolia: https://sepolia.etherscan.io/address/0x3210E66d0dB822bB100B928C6445B78F918B246b#code 
+- First deployment to Sepolia: https://sepolia.etherscan.io/address/0x3210E66d0dB822bB100B928C6445B78F918B246b#code
+- First mint: https://testnets.opensea.io/assets/sepolia/0x3210e66d0db822bb100b928c6445b78f918b246b/0 
 
 ## Versions
 
