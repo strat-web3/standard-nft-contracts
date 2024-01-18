@@ -8,8 +8,12 @@ describe("Standard NFT", function () {
         const uri =
             "https://bafkreidrrwa6eckvudnokxsttfayckjvilqpote6xn3fc5beler76py57u.ipfs.w3s.link/"
         const NFT = await ethers.getContractFactory("NFT")
-        const nft = await NFT.deploy(alice.address)
-        return { nft, alice, bob, francis, uri }
+        const initialOwner = alice.address
+        const name = "Sigirya NFT"
+        const symbol = "SIG"
+        const royalties = 400 // 4%
+        const nft = await NFT.deploy(initialOwner, name, symbol, royalties)
+        return { nft, alice, bob, francis, uri, royalties }
     }
 
     describe("Deployment", function () {
@@ -21,9 +25,13 @@ describe("Standard NFT", function () {
 
     describe("Interactions", function () {
         it("Should mint 1 NFT", async function () {
-            const { nft, alice, bob, uri } = await loadFixture(deployContracts)
+            const { nft, alice, bob, francis, uri } = await loadFixture(
+                deployContracts
+            )
             await nft.safeMint(bob.address, uri)
             expect(await nft.ownerOf(0)).to.be.equal(bob.address)
+            await expect(nft.connect(francis).safeMint(francis.address, uri)).to
+                .be.reverted
         })
         it("Should transfer 1 unit", async function () {
             const { nft, alice, bob, francis, uri } = await loadFixture(
@@ -34,8 +42,18 @@ describe("Standard NFT", function () {
             await nft.connect(bob).transferFrom(bob.address, francis.address, 0)
             expect(await nft.ownerOf(0)).to.be.equal(francis.address)
         })
+        it("Should get royaltyInfo", async function () {
+            const { nft, alice, bob, francis, uri, royalties } =
+                await loadFixture(deployContracts)
+            await nft.safeMint(bob.address, uri)
+            expect(await nft.ownerOf(0)).to.be.equal(bob.address)
+            expect(await nft.royaltyInfo(0, 10000)).to.deep.equal([
+                alice.address,
+                royalties
+            ])
+        })
+
         xit("Should burn", async function () {})
-        xit("Should receive royalties", async function () {})
         xit("Should redeem", async function () {})
     })
 })
