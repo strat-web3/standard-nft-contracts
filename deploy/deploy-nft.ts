@@ -9,20 +9,24 @@ export default async ({ getNamedAccounts, deployments }: any) => {
     const { deployer } = await getNamedAccounts()
     console.log(deployer)
 
-    const basic = await deploy("NFT", {
+    const name = "Sigirya NFT"
+    const symbol = "SIG"
+    const royalties = 400 // 4%
+
+    const nft = await deploy("NFT", {
         from: deployer,
-        args: [deployer],
+        args: [deployer, name, symbol, royalties],
         log: true
     })
 
-    console.log("basic.receipt.contractAddress:", basic.receipt.contractAddress)
+    console.log("nft.receipt.contractAddress:", nft.receipt.contractAddress)
     console.log("hre.network.name:", hre.network.name)
 
     switch (hre.network.name) {
         case "arthera":
             console.log(
-                "Basic ERC-20 token contract deployed:",
-                msg(basic.receipt.contractAddress)
+                "NFT contract deployed:",
+                msg(nft.receipt.contractAddress)
             )
 
             try {
@@ -32,10 +36,10 @@ export default async ({ getNamedAccounts, deployments }: any) => {
                 // console.log(
                 //     "\nWaiting for 6 block confirmations (you can skip this part)"
                 // )
-                // await basic.deploymentTransaction()?.wait(6)
+                // await nft.deploymentTransaction()?.wait(6)
                 // await hre.run("verify:verify", {
                 //     network: network.name,
-                //     address: basic.receipt.contractAddress,
+                //     address: nft.receipt.contractAddress,
                 //     constructorArguments: [initialMint]
                 // })
 
@@ -49,8 +53,8 @@ export default async ({ getNamedAccounts, deployments }: any) => {
             break
         case "arthera-testnet":
             console.log(
-                "Basic ERC-20 token contract deployed:",
-                msg(basic.receipt.contractAddress)
+                "NFT contract deployed:",
+                msg(nft.receipt.contractAddress)
             )
 
             try {
@@ -60,10 +64,10 @@ export default async ({ getNamedAccounts, deployments }: any) => {
                 // console.log(
                 //     "\nWaiting for 6 block confirmations (you can skip this part)"
                 // )
-                // await basic.deploymentTransaction()?.wait(6)
+                // await nft.deploymentTransaction()?.wait(6)
                 // await hre.run("verify:verify", {
                 //     network: network.name,
-                //     address: basic.receipt.contractAddress,
+                //     address: nft.receipt.contractAddress,
                 //     constructorArguments: [initialMint]
                 // })
 
@@ -78,18 +82,18 @@ export default async ({ getNamedAccounts, deployments }: any) => {
         case "sepolia":
             try {
                 console.log(
-                    "Basic ERC-20 token contract deployed:",
-                    msg(basic.receipt.contractAddress)
+                    "NFT contract deployed:",
+                    msg(nft.receipt.contractAddress)
                 )
                 console.log("\nEtherscan verification in progress...")
                 console.log(
                     "\nWaiting for 6 block confirmations (you can skip this part)"
                 )
-                // await basic.deploymentTransaction()?.wait(6)
+                // await nft.deploymentTransaction()?.wait(6)
                 await hre.run("verify:verify", {
                     network: network.name,
-                    address: basic.receipt.contractAddress,
-                    constructorArguments: [deployer]
+                    address: "0x91092A4CDc521B47D114bC486A0a752Dbb078255",
+                    constructorArguments: [deployer, name, symbol, royalties]
                 })
                 console.log("Etherscan verification done. ✅")
             } catch (error) {
@@ -100,18 +104,18 @@ export default async ({ getNamedAccounts, deployments }: any) => {
         case "op-sepolia":
             try {
                 console.log(
-                    "Basic ERC-20 token contract deployed:",
-                    msg(basic.receipt.contractAddress)
+                    "NFT contract deployed:",
+                    msg(nft.receipt.contractAddress)
                 )
                 console.log("\nEtherscan verification in progress...")
                 console.log(
                     "\nWaiting for 6 block confirmations (you can skip this part)"
                 )
-                // await basic.deploymentTransaction()?.wait(6)
+                // await nft.deploymentTransaction()?.wait(6)
                 await hre.run("verify:verify", {
                     network: network.name,
-                    address: basic.receipt.contractAddress,
-                    constructorArguments: [deployer]
+                    address: nft.receipt.contractAddress,
+                    constructorArguments: [deployer, name, symbol, royalties]
                 })
                 console.log("Etherscan verification done. ✅")
             } catch (error) {
@@ -120,4 +124,4 @@ export default async ({ getNamedAccounts, deployments }: any) => {
             break
     }
 }
-export const tags = ["Basic"]
+export const tags = ["NFT"]
