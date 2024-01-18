@@ -14,7 +14,8 @@ https://bafkreidrrwa6eckvudnokxsttfayckjvilqpote6xn3fc5beler76py57u.ipfs.w3s.lin
 -   [Hardhat Verify plugin](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify)
 -   [Hardhat Deploy plugin](https://github.com/wighawag/hardhat-deploy)
 -   [ERC-721](https://eips.ethereum.org/EIPS/eip-721)
--   [ERC-2981](https://eips.ethereum.org/EIPS/eip-2981)
+-   [ERC-2981](https://eips.ethereum.org/EIPS/eip-2981) (Royalties)
+-   [ERC-5560](https://eips.ethereum.org/EIPS/eip-5560) (Redeemable)
 
 ## Supported networks
 
