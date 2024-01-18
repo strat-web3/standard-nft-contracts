@@ -13,6 +13,8 @@ https://bafkreidrrwa6eckvudnokxsttfayckjvilqpote6xn3fc5beler76py57u.ipfs.w3s.lin
 -   [Open Zeppelin contracts v4.9.3](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/release-v4.9)
 -   [Hardhat Verify plugin](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify)
 -   [Hardhat Deploy plugin](https://github.com/wighawag/hardhat-deploy)
+-   [ERC-721](https://eips.ethereum.org/EIPS/eip-721)
+-   [ERC-2981](https://eips.ethereum.org/EIPS/eip-2981)
 
 ## Supported networks
 
@@ -69,8 +71,8 @@ pnpm sourcify:<NETWORK_NAME>
 
 ## Deployments
 
-- First deployment to Sepolia: https://sepolia.etherscan.io/address/0x3210E66d0dB822bB100B928C6445B78F918B246b#code
-- First mint: https://testnets.opensea.io/assets/sepolia/0x3210e66d0db822bb100b928c6445b78f918b246b/0 
+-   First deployment to Sepolia: https://sepolia.etherscan.io/address/0x3210E66d0dB822bB100B928C6445B78F918B246b#code
+-   First mint: https://testnets.opensea.io/assets/sepolia/0x3210e66d0db822bb100b928c6445b78f918b246b/0
 
 ## Versions
 

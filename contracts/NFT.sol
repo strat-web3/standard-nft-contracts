@@ -1,16 +1,31 @@
 // SPDX-License-Identifier: GPL3
-pragma solidity ^0.8.20;
+pragma solidity 0.8.20;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "./ERC2981ContractWideRoyalties.sol";
 
-contract NFT is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Burnable, Ownable {
+contract NFT is
+    ERC721,
+    ERC721Enumerable,
+    ERC721URIStorage,
+    ERC721Burnable,
+    Ownable,
+    ERC2981ContractWideRoyalties
+{
     uint256 private _nextTokenId;
 
-    constructor(address initialOwner) ERC721("NFT", "NFT") Ownable(initialOwner) {}
+    constructor(
+        address initialOwner,
+        string memory _name,
+        string memory _symbol,
+        uint256 _royalties
+    ) ERC721(_name, _symbol) Ownable(initialOwner) {
+        _setRoyalties(owner(), _royalties);
+    }
 
     function safeMint(address to, string memory uri) public onlyOwner {
         uint256 tokenId = _nextTokenId++;
@@ -41,7 +56,12 @@ contract NFT is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Burnable, Owna
 
     function supportsInterface(
         bytes4 interfaceId
-    ) public view override(ERC721, ERC721Enumerable, ERC721URIStorage) returns (bool) {
+    )
+        public
+        view
+        override(ERC721, ERC721Enumerable, ERC721URIStorage, ERC2981ContractWideRoyalties)
+        returns (bool)
+    {
         return super.supportsInterface(interfaceId);
     }
 }
