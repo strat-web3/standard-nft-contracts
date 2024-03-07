@@ -29,7 +29,7 @@ describe("Standard NFT", function () {
                 deployContracts
             )
             await nft.safeMint(bob.address, uri)
-            expect(await nft.ownerOf(0)).to.be.equal(bob.address)
+            expect(await nft.ownerOf(1)).to.be.equal(bob.address)
             await expect(nft.connect(francis).safeMint(francis.address, uri)).to
                 .be.reverted
         })
@@ -38,16 +38,16 @@ describe("Standard NFT", function () {
                 deployContracts
             )
             await nft.safeMint(bob.address, uri)
-            expect(await nft.ownerOf(0)).to.be.equal(bob.address)
-            await nft.connect(bob).transferFrom(bob.address, francis.address, 0)
-            expect(await nft.ownerOf(0)).to.be.equal(francis.address)
+            expect(await nft.ownerOf(1)).to.be.equal(bob.address)
+            await nft.connect(bob).transferFrom(bob.address, francis.address, 1)
+            expect(await nft.ownerOf(1)).to.be.equal(francis.address)
         })
         it("Should get royaltyInfo", async function () {
             const { nft, alice, bob, francis, uri, royalties } =
                 await loadFixture(deployContracts)
             await nft.safeMint(bob.address, uri)
-            expect(await nft.ownerOf(0)).to.be.equal(bob.address)
-            expect(await nft.royaltyInfo(0, 10000)).to.deep.equal([
+            expect(await nft.ownerOf(1)).to.be.equal(bob.address)
+            expect(await nft.royaltyInfo(1, 10000)).to.deep.equal([
                 alice.address,
                 royalties
             ])
