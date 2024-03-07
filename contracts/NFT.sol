@@ -16,7 +16,7 @@ contract NFT is
     Ownable,
     ERC2981ContractWideRoyalties
 {
-    uint256 private _nextTokenId;
+    uint256 private _nextTokenId = 1;
 
     constructor(
         address initialOwner,
