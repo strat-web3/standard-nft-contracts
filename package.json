@@ -9,7 +9,7 @@
         "deploy:arthera": "hardhat deploy --network arthera",
         "deploy:sepolia": "hardhat deploy --network sepolia",
         "deploy:arthera-testnet": "hardhat deploy --network arthera-testnet",
-        "deploy:op-sepolia": "hardhat deploy --network op-sepolia",
+        "deploy:op-sepolia": "hardhat deploy --network op-sepolia --reset",
         "sourcify:arthera": "hardhat sourcify --network arthera",
         "sourcify:arthera-testnet": "hardhat sourcify --network arthera-testnet",
         "mint:arthera": "hardhat mint --network arthera",
@@ -53,6 +53,7 @@
         "cli-color": "^2.0.3",
         "dotenv": "^16.3.1",
         "ethers": "^6.7.1",
-        "hardhat-deploy": "^0.11.37"
+        "hardhat-deploy": "^0.11.37",
+        "nft.storage": "^7.1.1"
     }
 }

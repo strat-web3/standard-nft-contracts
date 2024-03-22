@@ -45,14 +45,12 @@ const config: HardhatUserConfig = {
         },
         "op-sepolia": {
             chainId: 11155420,
-            url:
-                OP_SEPOLIA_RPC_ENDPOINT_URL ||
-                "https://ethereum-sepolia.publicnode.com",
+            url: OP_SEPOLIA_RPC_ENDPOINT_URL || "https://sepolia.optimism.io",
             accounts:
                 OP_SEPOLIA_PRIVATE_KEY !== undefined
                     ? [OP_SEPOLIA_PRIVATE_KEY]
-                    : []
-            // gasPrice: 5000000000
+                    : [],
+            gasPrice: 20000000
         },
         "arthera-testnet": {
             chainId: 10243,
