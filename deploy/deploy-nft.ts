@@ -122,6 +122,34 @@ export default async ({ getNamedAccounts, deployments }: any) => {
                 console.error(error)
             }
             break
+        case "base-sepolia":
+            try {
+                console.log(
+                    "NFT contract deployed:",
+                    msg(nft.receipt.contractAddress)
+                )
+                console.log("\nEtherscan verification in progress...")
+                console.log(
+                    "\nWaiting for 6 block confirmations (you can skip this part)"
+                )
+                await wait(20 * 1000)
+                await hre.run("verify:verify", {
+                    network: network.name,
+                    address: nft.receipt.contractAddress,
+                    constructorArguments: [
+                        name,
+                        symbol,
+                        uri,
+                        deployer,
+                        royalties,
+                        deployer
+                    ]
+                })
+                console.log("Etherscan verification done. ✅")
+            } catch (error) {
+                console.error(error)
+            }
+            break
     }
 }
 export const tags = ["NFT"]
