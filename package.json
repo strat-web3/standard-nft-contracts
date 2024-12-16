@@ -11,6 +11,7 @@
         "deploy:arthera-testnet": "hardhat deploy --network arthera-testnet",
         "deploy:op-sepolia": "hardhat deploy --network op-sepolia --reset",
         "deploy:base-sepolia": "hardhat deploy --network base-sepolia --reset",
+        "deploy:amoy": "hardhat deploy --network amoy --reset",
         "sourcify:arthera": "hardhat sourcify --network arthera",
         "sourcify:arthera-testnet": "hardhat sourcify --network arthera-testnet",
         "mint:arthera": "hardhat mint --network arthera",
@@ -22,6 +23,7 @@
         "send:arthera-testnet": "hardhat send --wallet 0x27292E1a901E3E0bE7d144aDba4CAD07da2d8a42 --network arthera-testnet --id",
         "send:op-sepolia": "hardhat send --wallet 0x27292E1a901E3E0bE7d144aDba4CAD07da2d8a42 --network op-sepolia --id",
         "bal": "npx hardhat run scripts/check-my-balance.ts --network",
+        "estimate": "hardhat run scripts/estimate-costs.ts",
         "prettier": "prettier --write ."
     },
     "keywords": [],
@@ -51,6 +53,7 @@
         "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.4.1",
         "@openzeppelin/contracts": "^5.0.1",
         "@types/node": "^20.5.7",
+        "axios": "^1.7.9",
         "cli-color": "^2.0.3",
         "dotenv": "^16.3.1",
         "ethers": "^6.7.1",

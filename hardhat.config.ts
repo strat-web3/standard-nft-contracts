@@ -19,6 +19,9 @@ const {
     BASE_SEPOLIA_RPC_ENDPOINT_URL,
     BASE_SEPOLIA_PRIVATE_KEY,
     BASE_ETHERSCAN_API_KEY,
+    AMOY_TESTNET_RPC_ENDPOINT_URL,
+    AMOY_TESTNET_PRIVATE_KEY,
+    AMOY_TESTNET_ETHERSCAN_API_KEY,
     ARTHERA_MAINNET_RPC_ENDPOINT_URL,
     ARTHERA_MAINNET_PRIVATE_KEY
 } = process.env
@@ -65,7 +68,18 @@ const config: HardhatUserConfig = {
                     ? [BASE_SEPOLIA_PRIVATE_KEY]
                     : []
         },
-
+        amoy: {
+            // https://polygon.technology/blog/introducing-the-amoy-testnet-for-polygon-pos
+            // Verification: https://vkpatva.medium.com/guide-to-deploy-verify-smart-contract-on-amoy-using-hardhat-1b4f26a2dc78
+            chainId: 80002,
+            url:
+                AMOY_TESTNET_RPC_ENDPOINT_URL ||
+                "https://rpc-amoy.polygon.technology/",
+            accounts:
+                AMOY_TESTNET_PRIVATE_KEY !== undefined
+                    ? [AMOY_TESTNET_PRIVATE_KEY]
+                    : []
+        },
         "arthera-testnet": {
             chainId: 10243,
             url:
@@ -74,7 +88,8 @@ const config: HardhatUserConfig = {
             accounts:
                 ARTHERA_TESTNET_PRIVATE_KEY !== undefined
                     ? [ARTHERA_TESTNET_PRIVATE_KEY]
-                    : []
+                    : [],
+            gasPrice: 20000000
         }
     },
     solidity: {
@@ -90,7 +105,8 @@ const config: HardhatUserConfig = {
         apiKey: {
             sepolia: ETHERSCAN_API_KEY || "",
             "op-sepolia": OP_ETHERSCAN_API_KEY || "",
-            "base-sepolia": BASE_ETHERSCAN_API_KEY || ""
+            "base-sepolia": BASE_ETHERSCAN_API_KEY || "",
+            amoy: AMOY_TESTNET_ETHERSCAN_API_KEY || ""
         },
         customChains: [
             {
@@ -107,6 +123,14 @@ const config: HardhatUserConfig = {
                 urls: {
                     apiURL: "https://api-sepolia.basescan.org/api",
                     browserURL: "https://sepolia.basescan.org"
+                }
+            },
+            {
+                network: "amoy",
+                chainId: 80002,
+                urls: {
+                    apiURL: "https://www.oklink.com/api/v5/explorer/blockchain/summary?chainShortName=AMOY_TESTNET",
+                    browserURL: "https://www.oklink.com/amoy"
                 }
             }
         ]

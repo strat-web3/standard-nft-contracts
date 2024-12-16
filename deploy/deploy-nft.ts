@@ -6,12 +6,18 @@ import hre, { ethers, network } from "hardhat"
 export default async ({ getNamedAccounts, deployments }: any) => {
     const { deploy } = deployments
 
+    function wait(ms: number): Promise<void> {
+        return new Promise(resolve => setTimeout(resolve, ms))
+    }
+
     const { deployer } = await getNamedAccounts()
     console.log(deployer)
 
     const name = "Sigirya NFT"
     const symbol = "SIG"
     const royalties = 400 // 4%
+    // const uri =
+    //     "https://bafkreidrrwa6eckvudnokxsttfayckjvilqpote6xn3fc5beler76py57u.ipfs.w3s.link/"
 
     const nft = await deploy("NFT", {
         from: deployer,
@@ -136,14 +142,28 @@ export default async ({ getNamedAccounts, deployments }: any) => {
                 await hre.run("verify:verify", {
                     network: network.name,
                     address: nft.receipt.contractAddress,
-                    constructorArguments: [
-                        name,
-                        symbol,
-                        uri,
-                        deployer,
-                        royalties,
-                        deployer
-                    ]
+                    constructorArguments: [deployer, name, symbol, royalties]
+                })
+                console.log("Etherscan verification done. ✅")
+            } catch (error) {
+                console.error(error)
+            }
+            break
+        case "amoy":
+            try {
+                console.log(
+                    "NFT contract deployed:",
+                    msg(nft.receipt.contractAddress)
+                )
+                console.log("\nEtherscan verification in progress...")
+                console.log(
+                    "\nWaiting for 6 block confirmations (you can skip this part)"
+                )
+                await wait(20 * 1000)
+                await hre.run("verify:verify", {
+                    network: network.name,
+                    address: nft.receipt.contractAddress,
+                    constructorArguments: [deployer, name, symbol, royalties]
                 })
                 console.log("Etherscan verification done. ✅")
             } catch (error) {
