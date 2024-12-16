@@ -1,6 +1,6 @@
 # Standard NFT contracts
 
-Standard NFT Solidity contracts for X institutional partner.
+Standard NFT Solidity contracts.
 
 ## Metadata template
 
@@ -15,13 +15,6 @@ https://bafkreidrrwa6eckvudnokxsttfayckjvilqpote6xn3fc5beler76py57u.ipfs.w3s.lin
 -   [Hardhat Deploy plugin](https://github.com/wighawag/hardhat-deploy)
 -   [ERC-721](https://eips.ethereum.org/EIPS/eip-721)
 -   [ERC-2981](https://eips.ethereum.org/EIPS/eip-2981)
-
-## Supported networks
-
--   [Arthera Mainnet](https://chainlist.org/chain/10242) ([docs](https://docs.arthera.net/build/networks#arthera-mainnet))
--   [Arthera testnet](https://chainlist.org/chain/10243) ([docs](https://docs.arthera.net/build/networks#arthera-testnet))
--   [Sepolia Testnet](https://chainlist.org/chain/11155111) ([docs](https://ethereum.org/nb/developers/docs/networks/#sepolia))
--   [OP Sepolia Testnet](https://chainlist.org/chain/11155420) ([docs](https://docs.optimism.io/chain/networks#op-sepolia))
 
 ## Install
 
@@ -55,6 +48,14 @@ pnpm deploy:<NETWORK_NAME>
 pnpm mint:<NETWORK_NAME>
 ```
 
+## Estimate costs
+
+```
+pnpm estimate
+```
+
+It will update the `[ESTIMATE.md](https://github.com/strat-web3/standard-nft-contracts/blob/main/README.md)` file.
+
 ## Check balance
 
 You can check the current signer wallet balance:
@@ -84,4 +85,4 @@ pnpm sourcify:<NETWORK_NAME>
 
 ## Support
 
-You can contact me via [Element](https://matrix.to/#/@julienbrg:matrix.org), [Telegram](https://t.me/julienbrg), [Twitter](https://twitter.com/julienbrg), [Discord](https://discordapp.com/users/julienbrg), or [LinkedIn](https://www.linkedin.com/in/julienberanger/).
+Feel free to reach out to [Julien](https://github.com/julienbrg) on [Farcaster](https://warpcast.com/julien-), [Element](https://matrix.to/#/@julienbrg:matrix.org), [Status](https://status.app/u/iwSACggKBkp1bGllbgM=#zQ3shmh1sbvE6qrGotuyNQB22XU5jTrZ2HFC8bA56d5kTS2fy), [Telegram](https://t.me/julienbrg), [Twitter](https://twitter.com/julienbrg), [Discord](https://discordapp.com/users/julienbrg), or [LinkedIn](https://www.linkedin.com/in/julienberanger/).
